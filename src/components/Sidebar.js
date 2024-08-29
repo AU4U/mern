@@ -3,32 +3,40 @@ import './Sidebar.css'
 import DonutLargeIcon from '@material-ui/icons/DonutLarge'
 import ChatIcon from '@material-ui/icons/Chat'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
-import { Avatar, IconButton } from '@material-ui/core'
-import { SearchOutlined } from '@material-ui/icons'
-// import SidebarChat from './SidebarChat'
+import {Avatar, IconButton} from '@material-ui/core'
+// import { SearchOutlined } from '@material-ui/icons'
+
+import SidebarChat from './SidebarChat'
+import {SearchOutlined} from "@material-ui/icons";
 // import { useStateValue } from './StateProvider';
 const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar__header">
-                <Avatar  src="https://pbs.twimg.com/profile_images/1020939891457241088/fcbu814K_400x400.jpg/>
+                <Avatar src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"/>
                 <div className="sidebar__headerRight">
                     <IconButton>
-                        <DonutLargeIcon />
+                        <DonutLargeIcon/>
                     </IconButton>
                     <IconButton>
-                        <ChatIcon />
+                        <ChatIcon/>
                     </IconButton>
                     <IconButton>
-                        <MoreVertIcon />
+                        <MoreVertIcon/>
                     </IconButton>
                 </div>
             </div>
             <div className="sidebar__search">
-                <h1>Search</h1>
+                <div className="sidebar__searchContainer">
+                    <SearchOutlined/>
+                    <input placeholder="Search or start view chart" type="text"/>
+
+                </div>
             </div>
             <div className="sidebar__chats">
-                <h1>Chats</h1>
+                <SidebarChat/>
+                <SidebarChat/>
+                <SidebarChat/>
             </div>
         </div>
     )
